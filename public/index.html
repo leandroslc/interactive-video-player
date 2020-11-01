@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Video Player Sample</title>
+    <link rel="stylesheet" href="../vendor/videojs/videojs.min.css" />
+    <link rel="stylesheet" href="../styles/root.css" />
+    <link rel="stylesheet" href="../styles/page.css" />
+    <link rel="stylesheet" href="../styles/videojs-theme.css" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to continue.</noscript>
+    <main id="video-container" class="video-container">
+      <video
+        id="video"
+        class="video-js vjs-default-skin"
+        poster="./jsexpert.png"
+        src="./video.mp4"
+        controls
+        preload="none"
+      ></video>
+    </main>
+    <script src="../vendor/videojs/videojs.min.js"></script>
+    <script src="../src/index.js"></script>
+  </body>
+</html>

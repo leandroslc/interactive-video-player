@@ -1,0 +1,13 @@
+
+:root {
+  --color-overlay: #fff;
+  --color-outline: rgb(22, 74, 218);
+  --vjs-color-primary: #b7090b;
+  --vjs-color-primary-faded: #830607;
+  --vjs-color-secondary: #cacaca;
+  --vjs-color-background: rgba(38, 38, 38, 0.9);
+  --vjs-color-background-above: rgba(46, 46, 46, 0.8);
+  --vjs-color-shadow: #000;
+  --vjs-color-video-background: #000;
+  --vjs-color-outline: rgb(22, 74, 218);
+}
