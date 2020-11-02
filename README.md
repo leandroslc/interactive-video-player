@@ -10,30 +10,30 @@
 </p>
 
 <div align="center">
-  <img src="./assets/home.png" alt="Video player demo" width="70%" />
+  <img align="center" src="./assets/home.png" alt="Video player demo" width="70%" />
 </div>
 
 
 ## :rocket: Getting started
 1. Install [NodeJS](https://nodejs.org) (if needed).
 
-2. Install dependencies using `npm install`.
+2. Render the videos _(follow the_ [Rendering videos](#clapper-rendering-videos) _section below)_.
 
-3. Render the videos _(follow the_ Rendering videos _section below)_.
+3. Run `npm run assets` to start the static server.
 
-4. Run `npm run assets` to start the static server.
+4. And run `npm start` to start the site.
 
-5. And run `npm start` to start the site.
+**Note:** You need [Git LFS](https://git-lfs.github.com). If you cloned this repository before installing it, you may need to clone again.
 
 
 ## :clapper: Rendering videos
-To render the videos in different resolutions (720p, 360p), follow these steps:
+To render the videos in different resolutions (720p, 360p):
 
 - Download _ffmpeg_ and _ffprobe_ from [ffmpeg.org](https://ffmpeg.org) or [ffbinaries.com](https://ffbinaries.com). Make sure they are in your system path.
 
 - Run the `video-convert` script (using [PowerShell](https://github.com/PowerShell/PowerShell)):
   ```powershell
-  ./scripts/video-convert.ps1 -MediaPath "./assets/sample-videos.zip"
+  ./scripts/video-convert "./assets/sample-videos.zip"
   ```
 
 
@@ -48,12 +48,12 @@ To render the videos in different resolutions (720p, 360p), follow these steps:
 
 
 ---
-<small>
+<sup>
   * Sample videos by Erick Wendel.
-</small>
+</sup>
 
 <br />
 
-<small>
+<sup>
   * The video.js theme is a modified version based on a <a href="https://codepen.io/benjipott/pen/JELELN">skin by Benjamin Pott</a>.
-</small>
+</sup>
