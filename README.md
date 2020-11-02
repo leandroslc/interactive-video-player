@@ -15,10 +15,15 @@
 
 
 ## :rocket: Getting started
-- Install [NodeJS](https://nodejs.org), if needed.
-- Install dependencies using `npm install`.
-- Run `npm run assets -- "<path to videos' directory>"` to start the static server.
-- And run `npm start` to start the site.
+1. Install [NodeJS](https://nodejs.org) (if needed).
+
+2. Install dependencies using `npm install`.
+
+3. Render the videos _(follow the_ Rendering videos _section below)_.
+
+4. Run `npm run assets` to start the static server.
+
+5. And run `npm start` to start the site.
 
 
 ## :clapper: Rendering videos
@@ -28,7 +33,7 @@ To render the videos in different resolutions (720p, 360p), follow these steps:
 
 - Run the `video-convert` script (using [PowerShell](https://github.com/PowerShell/PowerShell)):
   ```powershell
-  ./scripts/video-convert.ps1 -MediaPath "<path to videos>"
+  ./scripts/video-convert.ps1 -MediaPath "./assets/sample-videos.zip"
   ```
 
 
@@ -39,9 +44,16 @@ To render the videos in different resolutions (720p, 360p), follow these steps:
 - [W3C Media Source Extensions&trade;](https://www.w3.org/TR/media-source)
 - [Media Source Compatibility](https://caniuse.com/mediasource)
 - [Fragmented MP4](https://stackoverflow.com/questions/35177797/what-exactly-is-fragmented-mp4fmp4-how-is-it-different-from-normal-mp4)
-- [Building a Media Player (_using DASH_)](https://www.youtube.com/watch?v=CPFE34ngysU)
+- [Building a Media Player (_using DASH_)](https://www.youtube.com/watch?v=CPFE34ngysU) <small>(not used here)</small>
+
 
 ---
 <small>
-  The video.js theme is a modified version based on a <a href="https://codepen.io/benjipott/pen/JELELN">skin by Benjamin Pott</a>.
+  * Sample videos by Erick Wendel.
+</small>
+
+<br />
+
+<small>
+  * The video.js theme is a modified version based on a <a href="https://codepen.io/benjipott/pen/JELELN">skin by Benjamin Pott</a>.
 </small>
