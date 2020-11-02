@@ -41,9 +41,8 @@
   line-height: 1.5em;
   height: 1.5em;
   width: 1.5em;
-  border: 0.06em solid var(--vjs-color-primary);
+  border: 0.06em solid var(--vjs-color-secondary);
   border-radius: 50%;
-  opacity: 0.8;
   left: 50%;
   top: 40%;
   margin-left: -0.75em;
