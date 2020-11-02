@@ -5,6 +5,25 @@
   "productionHost": "",
   "codec": "video/mp4; codecs=\"avc1.64001F,mp4a.40.2\"",
   "initialVideo": "intro",
+  "smallestVideo": "finalizar",
+  "lowestResolution": 144,
+  "resolutions": [
+    {
+      "start": 3001,
+      "end": 20000,
+      "resolution": 144
+    },
+    {
+      "start": 901,
+      "end": 3000,
+      "resolution": 360
+    },
+    {
+      "start": 0,
+      "end": 900,
+      "resolution": 720
+    }
+  ],
   "intro": {
     "url": "$host/01.intro/01.intro-12.733333-$resolution.mp4",
     "at": 10,
@@ -23,7 +42,7 @@
     "options": ["Finalizar", "Guitarra"],
     "defaultOption": "Finalizar"
   },
-  "encerramento": {
+  "finalizar": {
     "url": "$host/03.encerramento/03.encerramento-4.733333-$resolution.mp4"
   }
 }

@@ -14,18 +14,23 @@ async function main() {
 
   const network = new Network({
     host,
-    hostTag: manifest.hostTag,
-    resolutionTag: manifest.fileResolutionTag,
+    manifest,
   });
 
   const videoComponent = new VideoComponent();
   const videoPlayer = new VideoMediaPlayer({
     manifest,
     network,
+    videoComponent,
   });
 
   videoPlayer.initializeCodec();
   videoComponent.initializePlayer();
+
+  window.nextChunk = (data) => {
+    videoPlayer.nextChunk(data);
+    videoComponent.closeModal();
+  };
 }
 
 window.onload = main

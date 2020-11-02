@@ -1,8 +1,10 @@
 class Network {
-  constructor({ host, hostTag, resolutionTag }) {
+  constructor({ host, manifest }) {
     this.host = host;
-    this.hostTag = hostTag;
-    this.resolutionTag = resolutionTag;
+    this.hostTag = manifest.hostTag;
+    this.resolutionTag = manifest.fileResolutionTag;
+    this.resolutions = manifest.resolutions;
+    this.lowestResolution = manifest.lowestResolution;
   }
 
   parseURL({ url, fileResolution }) {
@@ -15,5 +17,24 @@ class Network {
     const response = await fetch(url);
 
     return response.arrayBuffer();
+  }
+
+  async getProperResolution(fileUrl) {
+    const requestStartTime = Date.now();
+
+    const response = await fetch(fileUrl);
+    await response.arrayBuffer();
+
+    const requestEndTime = Date.now();
+
+    const elapsedTimeInMs = requestEndTime - requestStartTime;
+
+    const item = this.resolutions.find(item => {
+      return item.start <= elapsedTimeInMs && item.end >= elapsedTimeInMs;
+    });
+
+    return item
+      ? item.resolution
+      : this.lowestResolution;
   }
 }
