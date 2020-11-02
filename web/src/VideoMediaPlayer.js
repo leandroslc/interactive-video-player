@@ -16,7 +16,7 @@ class VideoMediaPlayer {
     this.videoElement = document.getElementById('video');
 
     if (!this.supportsMediaSource()) {
-      this.error('Your browser does not support MediaSource');
+      this.error('Your browser does not support Media Source Extensions');
     }
 
     if (!this.supportsCodec(this.manifest.codec)) {
@@ -32,7 +32,7 @@ class VideoMediaPlayer {
 
   sourceOpenWrapper(mediaSource) {
     return async() => {
-      const selected = this.selected = this.manifest[this.manifest.initialVideo];
+      const selected = this.selected = this.manifest.videos[this.manifest.initialVideo];
 
       this.sourceBuffer = mediaSource.addSourceBuffer(this.manifest.codec);
 
@@ -62,7 +62,7 @@ class VideoMediaPlayer {
 
   async nextChunk(data) {
     const key = data.toLowerCase();
-    const selected = this.manifest[key];
+    const selected = this.manifest.videos[key];
 
     this.selected = {
       ...selected,
@@ -88,7 +88,7 @@ class VideoMediaPlayer {
   }
 
   async getCurrentFileResolution() {
-    const smallestVideo = this.manifest[this.manifest.smallestVideo];
+    const smallestVideo = this.manifest.videos[this.manifest.smallestVideo];
 
     const fileUrl = this.network.parseURL({
       url: smallestVideo.url,
