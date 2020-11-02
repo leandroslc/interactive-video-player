@@ -1,6 +1,6 @@
 param
 (
-  [Parameter(Mandatory=$true)]
+  [Parameter(Position=1, Mandatory=$true)]
   [string]
   $MediaPath
 )
