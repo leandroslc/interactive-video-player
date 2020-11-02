@@ -1,3 +1,4 @@
 * eol=lf
+*.zip binary
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text

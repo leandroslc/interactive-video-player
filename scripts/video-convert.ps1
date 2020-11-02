@@ -28,11 +28,19 @@ $resolutions = @(
   }
 );
 
-$baseOutputPath = Join-Path $MediaPath -ChildPath 'output'
+if (-not($MediaPath -match '.*\.zip\s*$')) {
+  throw 'Specify a zip archive which contains the videos'
+}
 
-foreach ($mediaFile in (Get-ChildItem $MediaPath -Filter '*.mp4')) {
+$basePath = Split-Path (Resolve-Path $MediaPath) -Parent
+$baseInputPath = Join-Path $basePath -ChildPath '__temp'
+$baseOutputPath = Join-Path $basePath -ChildPath 'output'
+
+Expand-Archive $MediaPath -DestinationPath $baseInputPath -Force
+
+foreach ($mediaFile in (Get-ChildItem $baseInputPath -Filter '*.mp4')) {
   $mediaName = $mediaFile -replace '(\.mp4)|(\-\d+x\d+)'
-  $inputFile = Join-Path $MediaPath -ChildPath $mediaFile
+  $inputFile = Join-Path $baseInputPath -ChildPath $mediaFile
   $outputDir = Join-Path $baseOutputPath -ChildPath $mediaName
 
   New-Item $outputDir -ItemType Directory -Force | Out-Null
@@ -56,10 +64,11 @@ foreach ($mediaFile in (Get-ChildItem $MediaPath -Filter '*.mp4')) {
      -maxrate "$($resolution.Rate)k" `
      -bufsize "$($resolution.Buffer)k" `
      -vf `"scale="$($resolution.Scale)":"$($resolution.Size)"`" `
-     -v quiet
      "`"$outputFile`""
   }
 }
+
+Remove-Item $baseInputPath -Force -Recurse
 
 Write-Host "Files written to `"$baseOutputPath`"" -ForegroundColor Blue
 Write-Host 'Done.' -ForegroundColor Green

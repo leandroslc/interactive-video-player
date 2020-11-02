@@ -1,1 +1,7 @@
 node_modules
+
+# Assets videos rendering output
+assets/output
+
+# Temp extracted assets videos before rendering
+__temp
