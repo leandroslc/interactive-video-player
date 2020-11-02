@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "assets": "npx http-server --cors -p 8081",
-    "dev": "npx http-server --cors -p 8080 web/ -o"
+    "start": "npx http-server --cors -p 8080 web/ -o"
   },
   "devDependencies": {
     "http-server": "^0.12.3"
