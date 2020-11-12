@@ -17,7 +17,17 @@ async function main() {
     manifest,
   });
 
-  const videoComponent = new VideoComponent();
+  const selectOptionAction = (data) => {
+    videoPlayer.nextChunk(data);
+    videoComponent.closeModal();
+  };
+
+  const videoComponent = new VideoComponent({
+    videoId: 'video',
+    modalTemplateId: 'video-modal-template',
+    selectOptionAction,
+  });
+
   const videoPlayer = new VideoMediaPlayer({
     manifest,
     network,
@@ -26,11 +36,6 @@ async function main() {
 
   videoPlayer.initializeCodec();
   videoComponent.initializePlayer();
-
-  window.nextChunk = (data) => {
-    videoPlayer.nextChunk(data);
-    videoComponent.closeModal();
-  };
 }
 
 window.onload = main

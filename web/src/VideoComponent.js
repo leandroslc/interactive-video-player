@@ -1,10 +1,13 @@
 class VideoComponent {
-  constructor() {
+  constructor({ videoId, modalTemplateId, selectOptionAction }) {
+    this.videoId = videoId;
+    this.modalTemplateId = modalTemplateId;
+    this.selectOptionAction = selectOptionAction;
     this.modal = {};
   }
 
   initializePlayer() {
-    const player = videojs('video');
+    const player = videojs(this.videoId);
     const ModalDialog = videojs.getComponent('ModalDialog');
     const modal = new ModalDialog(player, {
         temporary: false,
@@ -32,20 +35,24 @@ class VideoComponent {
     return () => {
       const [option1, option2] = options;
 
-      const htmlTemplate = `
-      <div class="video-overlay">
-        <div class="video-button-wrapper">
-          <button class="video-overlay-button" onclick="window.nextChunk('${option1}')">
-            ${option1}
-          </button>
-          <button class="video-overlay-button" onclick="window.nextChunk('${option2}')">
-            ${option2}
-          </button>
-        </div>
-      </div>
-      `;
+      const template = document.getElementById(this.modalTemplateId);
+      const htmlModalTemplate = template.content.firstElementChild;
+      const htmlModal = htmlModalTemplate.cloneNode(true);
 
-      modal.contentEl().innerHTML = htmlTemplate;
+      const firstOptionButton = htmlModal.querySelector('[first-option]');
+      const secondOptionButton = htmlModal.querySelector('[second-option]');
+
+      configureOptionButton(firstOptionButton, option1);
+      configureOptionButton(secondOptionButton, option2);
+
+      const modalContent = modal.contentEl()
+      modalContent.innerHTML = '';
+      modalContent.appendChild(htmlModal);
     };
+  }
+
+  configureOptionButton(button, option) {
+    button.addEventListener('click', this.selectOptionAction.bind(null, option));
+    button.innerHTML = option;
   }
 }
