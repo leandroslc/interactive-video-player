@@ -1,17 +1,4 @@
 
-@font-face {
-  font-family: 'Font Awesome 5 Free';
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url("../vendor/fontawesome/fonts/fa-solid-900.eot");
-  src: url("../vendor/fontawesome/fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
-       url("../vendor/fontawesome/fonts/fa-solid-900.woff2") format("woff2"),
-       url("../vendor/fontawesome/fonts/fa-solid-900.woff") format("woff"),
-       url("../vendor/fontawesome/fonts/fa-solid-900.ttf") format("truetype"),
-       url("../vendor/fontawesome/fonts/fa-solid-900.svg#fontawesome") format("svg");
-}
-
 .video-js {
   position: fixed;
   right: 0;
@@ -20,18 +7,15 @@
   min-height: 100%;
   width: auto;
   height: auto;
-  background-color: var(--vjs-color-video-background);
+  background-color: var(--v-color-video-background);
   background-size: cover;
   z-index: 99999;
   font-size: 16px;
-  color: var(--vjs-color-secondary);
+  color: var(--v-color-secondary);
 }
 
 .video-js
 .vjs-control-bar {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -41,7 +25,7 @@
   line-height: 1.5em;
   height: 1.5em;
   width: 1.5em;
-  border: 0.06em solid var(--vjs-color-secondary);
+  border: 0.06em solid var(--v-color-secondary);
   border-radius: 50%;
   left: 50%;
   top: 40%;
@@ -115,18 +99,18 @@
 .video-js .vjs-control:focus:before,
 .video-js .vjs-control:hover:before,
 .video-js .vjs-control:focus {
-  text-shadow: 0 0 0.6em var(--vjs-color-secondary);
+  text-shadow: 0 0 0.6em var(--v-color-secondary);
 }
 
 .video-js .vjs-control-bar,
 .video-js .vjs-big-play-button,
 .video-js .vjs-menu-button .vjs-menu-content {
-  background-color: var(--vjs-color-background);
+  background-color: var(--v-color-background);
 }
 
 .video-js
 .vjs-control-bar {
-  background-color: var(--vjs-color-background);
+  background-color: var(--v-color-background);
   width: auto;
   left: 4em;
   right: 4em;
@@ -163,7 +147,7 @@
 
 .video-js
 .vjs-slider {
-  background-color: var(--vjs-color-background-above);
+  background-color: var(--v-color-background-above);
   border-radius: 1em;
   margin: 0;
 }
@@ -177,14 +161,14 @@
 .video-js .vjs-volume-level,
 .video-js .vjs-play-progress,
 .video-js .vjs-slider-bar {
-  background: var(--vjs-color-secondary);
+  background: var(--v-color-secondary);
   border-radius: 1em;
 }
 
 .video-js
 .vjs-play-progress {
-  color: var(--vjs-color-primary);
-  background: var(--vjs-color-primary);
+  color: var(--v-color-primary);
+  background: var(--v-color-primary);
   font-size: 1.3em;
 }
 
@@ -194,11 +178,11 @@
   content: '';
   top: -0.2em;
   border: 0;
-  background: radial-gradient(var(--vjs-color-primary) 22%, var(--vjs-color-primary-faded));
+  background: radial-gradient(var(--v-color-primary) 22%, var(--v-color-primary-faded));
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  box-shadow: var(--vjs-color-shadow) 0 0 2px;
+  box-shadow: var(--v-color-shadow) 0 0 2px;
 }
 
 .video-js
@@ -217,12 +201,7 @@
   padding: 0 4em 0 0.4em;
   top: -2.5em;
   border-radius: 1em;
-  transition: top 150ms linear,
-              opacity 150ms linear,
-              transform 150ms linear,
-      -webkit-transform 150ms linear,
-         -moz-transform 150ms linear,
-           -o-transform 150ms linear;
+  transition: top 150ms linear, opacity 150ms linear, transform 150ms linear;
   z-index: 1;
   opacity: 1;
 }
@@ -236,7 +215,7 @@
 .video-js
 .vjs-progress-control
 .vjs-mouse-display {
-  background: var(--vjs-color-secondary);
+  background: var(--v-color-secondary);
 }
 
 .video-js
@@ -248,7 +227,7 @@
   height: 0;
   width: 0;
   position: absolute;
-  border-top-color: var(--vjs-color-background-above);
+  border-top-color: var(--v-color-background-above);
   border-width: 0.8em;
   right: 25%;
   margin-left: -0.8em;
@@ -256,8 +235,8 @@
 
 .video-js
 .vjs-time-tooltip {
-  background: var(--vjs-color-secondary) !important;
-  color: var(--vjs-color-primary);
+  background: var(--v-color-secondary) !important;
+  color: var(--v-color-primary);
 }
 
 .video-js
@@ -268,7 +247,7 @@
   height: 0;
   width: 0;
   position: absolute;
-  border-top-color: var(--vjs-color-background-above);
+  border-top-color: var(--v-color-background-above);
   border-width: 0.8em;
   right: 25%;
   margin-left: -0.8em;
@@ -286,7 +265,7 @@
 
 .video-js
 .vjs-load-progress {
-  background: var(--vjs-color-background-above);
+  background: var(--v-color-background-above);
   border-radius: 1em;
   height: 0.7em !important;
 }
@@ -294,7 +273,7 @@
 .video-js
 .vjs-load-progress
 div {
-  background: var(--vjs-color-background-above);
+  background: var(--v-color-background-above);
   border-radius: 1em;
   height: 0.7em !important;
 }
@@ -321,7 +300,7 @@ div {
   border-top-color: currentColor !important;
   border-right-color: transparent;
   border-radius: 50%;
-  color: var(--vjs-color-primary);
+  color: var(--v-color-primary);
   text-shadow: none !important;
 }
 
@@ -342,7 +321,7 @@ div {
 
 .video-js .vjs-control:focus,
 .video-js .vjs-progress-holder:focus {
-  outline: 1px solid var(--vjs-color-outline);
+  outline: 1px solid var(--v-color-outline);
 }
 
 @keyframes vjs-spinner-fade-in {

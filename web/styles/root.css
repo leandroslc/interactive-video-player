@@ -1,13 +1,13 @@
 
 :root {
   --color-overlay: #fff;
-  --color-outline: rgb(22, 74, 218);
-  --vjs-color-primary: #b7090b;
-  --vjs-color-primary-faded: #830607;
-  --vjs-color-secondary: #cacaca;
-  --vjs-color-background: rgba(38, 38, 38, 0.9);
-  --vjs-color-background-above: rgba(46, 46, 46, 0.8);
-  --vjs-color-shadow: #000;
-  --vjs-color-video-background: #000;
-  --vjs-color-outline: rgb(22, 74, 218);
+  --color-outline: #164ada;
+  --v-color-primary: #b7090b;
+  --v-color-primary-faded: #830607;
+  --v-color-secondary: #cacaca;
+  --v-color-background: rgba(38, 38, 38, 0.9);
+  --v-color-background-above: rgba(46, 46, 46, 0.8);
+  --v-color-shadow: #000;
+  --v-color-video-background: #000;
+  --v-color-outline: #164ada;
 }
