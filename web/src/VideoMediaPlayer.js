@@ -32,7 +32,7 @@ class VideoMediaPlayer {
 
   sourceOpenWrapper(mediaSource) {
     return async() => {
-      const selected = this.selected = this.manifest.videos[this.manifest.initialVideo];
+      const selected = this.selected = this.manifest.getInitialVideo();
 
       this.sourceBuffer = mediaSource.addSourceBuffer(this.manifest.codec);
 
@@ -62,7 +62,7 @@ class VideoMediaPlayer {
 
   async nextChunk(data) {
     const key = data.toLowerCase();
-    const selected = this.manifest.videos[key];
+    const selected = this.manifest.getVideo(key);
 
     this.selected = {
       ...selected,
@@ -88,7 +88,7 @@ class VideoMediaPlayer {
   }
 
   async getCurrentFileResolution() {
-    const smallestVideo = this.manifest.videos[this.manifest.smallestVideo];
+    const smallestVideo = this.manifest.getSmallestVideo();
 
     const fileUrl = this.network.parseURL({
       url: smallestVideo.url,

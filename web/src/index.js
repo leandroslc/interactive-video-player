@@ -5,12 +5,19 @@ function isLocal() {
   return !!~LocalhostUrls.indexOf(window.location.hostname);
 }
 
+async function getManifestData(url) {
+  const response = await fetch(url);
+
+  return response.json();
+}
+
 async function main() {
-  const manifest = await (await fetch(ManifestUrl)).json();
+  const manifestData = await getManifestData(ManifestUrl);
+  const manifest = new Manifest(manifestData);
 
   const host = isLocal()
-    ? manifest.localHost
-    : manifest.productionHost;
+    ? manifestData.localHost
+    : manifestData.productionHost;
 
   const network = new Network({
     host,
