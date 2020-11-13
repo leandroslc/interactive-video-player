@@ -21,9 +21,9 @@ class VideoComponent {
     this.modal = modal;
   }
 
-  configureModal(selected) {
+  configureModal(options) {
     const modal = this.modal;
-    modal.on('modalopen', this.getModalTemplate(selected, modal));
+    modal.on('modalopen', this.getModalTemplate(options, modal));
     modal.open();
   }
 
@@ -42,10 +42,10 @@ class VideoComponent {
       const firstOptionButton = htmlModal.querySelector('[first-option]');
       const secondOptionButton = htmlModal.querySelector('[second-option]');
 
-      configureOptionButton(firstOptionButton, option1);
-      configureOptionButton(secondOptionButton, option2);
+      this.configureOptionButton(firstOptionButton, option1);
+      this.configureOptionButton(secondOptionButton, option2);
 
-      const modalContent = modal.contentEl()
+      const modalContent = modal.contentEl();
       modalContent.innerHTML = '';
       modalContent.appendChild(htmlModal);
     };
